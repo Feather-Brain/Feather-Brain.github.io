@@ -15,7 +15,7 @@
 
 
 
-<title>测试2 | featherain的个人站</title>
+<title>python基础 - os库 - 文件和目录操作 | featherain的个人站</title>
 
 
 
@@ -125,11 +125,70 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">展开所有</a>
+        <a onclick="go_top()">返回顶部</a>
+        <a onclick="go_bottom()">直达底部</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6;    // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function () {
+            tocbot.refresh(obj_merge(tocbot_default_config, { hasInnerContainers: true }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function () {
+        tocbot.init(obj_merge(tocbot_default_config, { collapseDepth: 1 }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, { collapseDepth: expanded ? 1 : DEPTH_MAX }));
+        b.innerText = expanded ? '展开所有' : '全部折叠';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">测试2</h1>
+            <h1 class="post-title">python基础 - os库 - 文件和目录操作</h1>
             
                 <div class="post-meta">
                     
@@ -138,16 +197,28 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">四月 30, 2022&nbsp;&nbsp;20:55:44</a>
+                        Date: <a href="#">五月 2, 2022&nbsp;&nbsp;13:44:44</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/python%E5%9F%BA%E7%A1%80/">python基础</a>
+                            
+                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            
+            <h1 id="文件夹操作"><a href="#文件夹操作" class="headerlink" title="文件夹操作"></a>文件夹操作</h1><h2 id="获取当前目录路径信息"><a href="#获取当前目录路径信息" class="headerlink" title="获取当前目录路径信息"></a>获取当前目录路径信息</h2><h3 id="当前文件所处目录的绝对路径（C-Program-Files-python3-9）"><a href="#当前文件所处目录的绝对路径（C-Program-Files-python3-9）" class="headerlink" title="当前文件所处目录的绝对路径（C:\\Program Files\\python3.9）"></a>当前文件所处目录的绝对路径（C:\\Program Files\\python3.9）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.path.abspath(<span class="string">&quot;.&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<p><img src="/python%E5%9F%BA%E7%A1%80-os%E5%BA%93-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/image-20220502152332716.png" alt="image-20220502152332716"></p>
+<p><img src="/image-20220502153043713.png" alt="image-20220502153043713"></p>
+
         </div>
 
         <!-- 底栏信息内容 -->
@@ -162,7 +233,7 @@
                 
                     <p class="copyright-item">
                         <span>永久链接:</span>
-                        <span><a href="https://feather-brain.github.io/2022/04/30/%E6%B5%8B%E8%AF%952/">https://feather-brain.github.io/2022/04/30/%E6%B5%8B%E8%AF%952/</a></span>
+                        <span><a href="https://feather-brain.github.io/2022/05/02/python%E5%9F%BA%E7%A1%80-os%E5%BA%93-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/">https://feather-brain.github.io/2022/05/02/python%E5%9F%BA%E7%A1%80-os%E5%BA%93-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/</a></span>
                     </p>
                 
                 
@@ -185,6 +256,12 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/os%E5%BA%93/"># os库</a>
+                    
+                        <a href="/tags/%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C/"># 文件和目录操作</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -196,7 +273,7 @@
         <section class="post-nav">
             
             
-            <a class="next" rel="next" href="/2022/04/30/%E6%B5%8B%E8%AF%95%E9%A1%B5/">测试页</a>
+            <a class="next" rel="next" href="/2022/04/29/hello-world/">Hello World</a>
             
         </section>
 
