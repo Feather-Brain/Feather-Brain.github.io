@@ -217,17 +217,17 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp|grep 25565</span><br></pre></td></tr></table></figure>
 
 <p>控制台返回：</p>
-<p><img src="linux%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3%E6%9C%8D%E5%8A%A1/image-20220707150511797.png" alt="image-20220707150511797" loading="lazy"></p>
+<p><img src="image-20220707150511797.png" alt="image-20220707150511797" loading="lazy"></p>
 <p>2、然后根据运行程序的pid（这里是1497254）强制kill掉运行的程序，注意如果这个运行着的id不是确定的已知要删除的程序不要使用-9进行删除</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 1497254</span><br></pre></td></tr></table></figure>
 
 <p>控制台返回：</p>
-<p><img src="linux%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3%E6%9C%8D%E5%8A%A1/image-20220707150553472.png" alt="image-20220707150553472" loading="lazy"></p>
+<p><img src="image-20220707150553472.png" alt="image-20220707150553472" loading="lazy"></p>
 <blockquote>
 <p>这里的-9意为要求操作系统从内核级别强制杀死进程</p>
 </blockquote>
 <h2 id="附"><a href="#附" class="headerlink" title="附"></a>附</h2><p>​    kill -n pid指令中的-n指的是一个<code>信号量编号</code>，在linux里面可以通过kill -l指令查询所有的信号量，下面是几个常用的kill信号编号</p>
-<p><img src="linux%E5%85%B3%E9%97%AD%E7%AB%AF%E5%8F%A3%E6%9C%8D%E5%8A%A1/image-20220707151540767.png" alt="image-20220707151540767" loading="lazy"></p>
+<p><img src="image-20220707151540767.png" alt="image-20220707151540767" loading="lazy"></p>
 <p>​    （来源于<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_23080741/article/details/119205621">kill 命令信号全解_田振靓的博客-CSDN博客_kill 信号</a>，有关于其他信号变量的详细信息可以查看该bloc）</p>
 
         </div>
