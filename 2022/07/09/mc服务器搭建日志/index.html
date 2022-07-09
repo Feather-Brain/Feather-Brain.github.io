@@ -235,10 +235,10 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv server.jar minecraft_server.1.19.jar</span><br></pre></td></tr></table></figure>
 
 <p>​    接下来进行初步安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx2048M -Xms4096M -jar minecraft_server.1.19.jar nogui</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx2048M -Xms3072M -jar minecraft_server.1.19.jar nogui</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>-xmx用来指定我们运行初始内存大小，这里因为我服务器最大内存是4G所以设定xms是4G，但是因为会有一些其他的程序运行在服务器上，所以姑且设置了2G的初始内存。</p>
+<p>-xmx用来指定我们运行初始内存大小，这里因为我服务器最大内存是4G所以设定xms是3G，但是因为会有一些其他的程序运行在服务器上，所以姑且设置了2G的初始内存。</p>
 <p>下面是官网的解释（<a target="_blank" rel="noopener" href="https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server%EF%BC%89">https://minecraft.fandom.com/wiki/Tutorials/Setting_up_a_server）</a></p>
 <p><img src="image-20220709182444945.png" alt="image-20220709182444945" loading="lazy"></p>
 <p>英文原版：</p>
@@ -250,7 +250,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S “MC1.19”</span><br></pre></td></tr></table></figure>
 
 <p>​    然后直接再次输入mc服务器启动命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx2048M -Xms4096M -jar minecraft_server.1.19.jar nogui</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx2048M -Xms3072M -jar minecraft_server.1.19.jar nogui</span><br></pre></td></tr></table></figure>
 
 <p>​    然后当你看到进程Done!的时候说明服务启动成功，之后只需要开放一下我们服务器的25565端口(mc默认监听端口)就可以在mc里面访问到我们的服务器了。</p>
 <p>​    然后按<code>ctrl+a+d</code>退出我们运行mc服务器的screen，之后后面想要返回这个screen的话，输入<code>screen -r</code>就可以查看当前运行的screen列表，然后选择后缀是MC1.19的那个，输入<code>screen -r 其全名</code>就可以进入了，这里是因为screen会给我们建立的线程加上一个数字前缀。</p>
