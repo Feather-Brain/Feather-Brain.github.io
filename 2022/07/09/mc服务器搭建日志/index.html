@@ -213,7 +213,8 @@
         </header>
 
         <div class="post-content">
-            <h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><h2 id="1、环境"><a href="#1、环境" class="headerlink" title="1、环境"></a>1、环境</h2><p>​    服务器环境是用到centos8，Ubuntu基本一个操作。    </p>
+            <h1 id="搭建过程"><a href="#搭建过程" class="headerlink" title="搭建过程"></a>搭建过程</h1><p>搭建过程中用到putty进行服务器连接，使用宝塔面板进行服务器的文件上传、端口开放</p>
+<h2 id="1、环境"><a href="#1、环境" class="headerlink" title="1、环境"></a>1、环境</h2><p>​    服务器环境是用到centos8，Ubuntu基本一个操作。    </p>
 <p>​    咱搭建的是java版的mc，所以要在服务器上安装java环境，具体的安装过程略。</p>
 <p>​    除此之外，因为服务器的客观原因，我们还需要在服务器上安装screen环境以保证我们服务的正常待机。</p>
 <p>​    centos：</p>
@@ -251,7 +252,7 @@
 <p>​    然后直接再次输入mc服务器启动命令</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx2048M -Xms4096M -jar minecraft_server.1.19.jar nogui</span><br></pre></td></tr></table></figure>
 
-<p>​    最后当你看到进程Done!的时候说明服务启动成功。</p>
+<p>​    然后当你看到进程Done!的时候说明服务启动成功，之后只需要开放一下我们服务器的25565端口(mc默认监听端口)就可以在mc里面访问到我们的服务器了。</p>
 <p>​    然后按<code>ctrl+a+d</code>退出我们运行mc服务器的screen，之后后面想要返回这个screen的话，输入<code>screen -r</code>就可以查看当前运行的screen列表，然后选择后缀是MC1.19的那个，输入<code>screen -r 其全名</code>就可以进入了，这里是因为screen会给我们建立的线程加上一个数字前缀。</p>
 <h1 id="服务器更新日志"><a href="#服务器更新日志" class="headerlink" title="服务器更新日志"></a>服务器更新日志</h1><h2 id="2022-7-9-将服务器从1-18-2更新到1-19"><a href="#2022-7-9-将服务器从1-18-2更新到1-19" class="headerlink" title="2022.7.9 将服务器从1.18.2更新到1.19"></a>2022.7.9 将服务器从1.18.2更新到1.19</h2><p>​    更新服务器需要我们重新搭建一个1.19的服务器，然后把原来的地图和登录人物的信息上传就可以了。mc服务器的地图和人物信息都保存在我们服务器目录下的world目录里面，一般跨版本也要删区块，需要处理一下里面的地图文件。处理用到amulet（3d地图编辑器）和mca selector（区块编辑器）两个软件。这个服务是我们的好哥们eustrain友情提供的，让我们感谢他🎉🎉🎉🎉。</p>
 
@@ -292,6 +293,8 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/linux/"># linux</a>
                     
                         <a href="/tags/Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/"># Minecraft服务器搭建</a>
                     
